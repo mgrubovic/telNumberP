@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+	<head>
+		<title>{{ the_title }}</title>
+		<link rel="stylesheet" href="static/style_main.css">
+	</head>
+	<body>
+		<div class="header">
+			<h1>Telephone numbers in Serbia</h1>
+		</div>
+		
+		<div class="menu">
+			<div class="menuitem">
+				<a href="../about">About</a>
+			</div>
+			<div class="menuitem">
+				<a href="../entry">Find numbers</a>
+			</div>
+			<div class="menuitem">
+				<a href="../geo">Geo ranges</a>
+			</div>
+			<div class="menuitem">
+				<a href="../viewshort">Short codes</a>
+			</div>
+			<div class="menuitem">
+				<a href="../summary">Summary</a>
+			</div>
+			<div class="menuitem">
+				<a href="../configuration">Configuration</a>
+			</div>
+			
+		</div>
+		
+		<div class="main">
+			{% block body %}
+		
+			{% endblock %}
+		</div>
+	</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<h2>{{ the_title}}</h2>
+
+<p>You submited the following data</p>
+<table>
+	<tr><td>Area code:</td><td>{{ area_code }}</td></tr>
+	<tr><td>Number:</td><td>{{ the_number}}</td></tr>
+</table>
+<p>Result of checking number {{ area_code }} / {{the_number}} is:</p>
+<h2>{{the_results}}
+
+{% endblock %}

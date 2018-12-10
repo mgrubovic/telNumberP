@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body%}
+<form method='POST' action='/search4'>
+	<table>
+		<p>Use this form to submit a search request:</p>
+		<tr>
+			<td>Area code:</td>
+			<td><input name='area' type='TEXT' width='60'</td>
+		</tr>
+		<tr>
+			<td>Number:</td>
+			<td><input name='number' type='TEXT' value=''</td>
+		</tr>
+	</table>
+	<p>When you're ready click the button</p>
+	<p><input value='Check number' type='SUBMIT'></p>
+
+</form>
+
+
+{% endblock%}
