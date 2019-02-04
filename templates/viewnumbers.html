@@ -1,22 +1,58 @@
 {% extends 'base.html' %}
 
-{% block body%}
-<h2>{{ the_title }}</h2>
 
-<table>
-	<tr>
-		{% for row_title in the_row_titles %}
-			<th> {{ row_title }}</th>
-		{% endfor %}
-	</tr>
-	{% for log_row in the_data %}
+{% block body%}
+
+<h2>{{ the_title }}</h2>
+<form method='POST' action='/geosearch'>
+	<table>
+		<p>Use this form to submit a search request:</p>
 		<tr>
-			{% for item in log_row %}
-				<td>{{item}}</td>
+			<td>Area code:</td>
+			<td><input name='area' type='TEXT' width='60'</td>
+		</tr>
+		<tr>
+			<td>Number:</td>
+			<td><input name='number' type='TEXT' value=''</td>
+		</tr>
+	</table>
+	<p>When you're ready click the button</p>
+	<p><input value='Check number' type='SUBMIT'></p>
+
+</form>
+
+<form action="" name="tableForm">
+	<table id="rangeTableView">
+		<tr>
+			{% for row_title in the_row_titles %}
+				<th> {{ row_title }}</th>
 			{% endfor %}
 		</tr>
-	{% endfor %}
-</table>
+		<tr>
+			<td>
+				<select name="operatorTable">
+					<option class='oTable' value='ts'>ALL</option>
+					<!-- JavaScript adds operators					 -->
+				</select>
+			</td>	
+			<td>
+				<select name="selectAreaTable">
+					<option class='ndc-geo' value='ALL'>ALL</option>
+				</select>
+			</td>
 
+			<td>
+				<input type="text" name="selectStartRange" maxLength="3"size="3" />
+			</td>
+		</tr>
+		{% for log_row in the_data %}
+			<tr class="tableRow">
+				{% for item in log_row %}
+					<td>{{item}}</td>
+				{% endfor %}
+			</tr>
+		{% endfor %}
+	</table>
+</form>
 
 {% endblock%}
